@@ -1,0 +1,53 @@
+snippets:
+  # ls
+  - name: ls
+    keyword: ls
+    snippet: eza --icons --git
+
+  - name: ll
+    keyword: ll
+    snippet: eza -la --icons --git
+
+  - name: lt
+    keyword: lt
+    snippet: eza --tree --icons --level=2
+
+  # editor
+  - name: vim
+    keyword: vim
+    snippet: nvim
+
+  - name: vi
+    keyword: vi
+    snippet: nvim
+
+  - name: view
+    keyword: view
+    snippet: nvim -R
+
+  # tools
+  - name: cat
+    keyword: cat
+    snippet: bat
+
+  - name: find
+    keyword: find
+    snippet: fd
+
+  - name: grep
+    keyword: grep
+    snippet: rg
+
+  # git
+  - name: git
+    keyword: g
+    snippet: git
+
+  - name: lazygit
+    keyword: lg
+    snippet: lazygit
+
+  # kubernetes
+  - name: kubectl
+    keyword: k
+    snippet: kubectl
