@@ -1,0 +1,1 @@
+-- Tree-sitter の設定は lazy.nvim 経由で lua/plugins/treesitter.lua にあります。
