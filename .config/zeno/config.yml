@@ -51,3 +51,13 @@ snippets:
   - name: kubectl
     keyword: k
     snippet: kubectl
+
+  # df
+  - name: df
+    keyword: df
+    snippet: duf
+
+  # lazygit with config
+  - name: lazygit
+    keyword: lazygit
+    snippet: lazygit -ucf ~/Library/Application\ Support/lazygit/config.yml

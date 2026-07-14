@@ -1,6 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  lazy = false,
   keys = {
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
   },
@@ -13,6 +14,7 @@ return {
     },
     filters = {
       dotfiles = false,
+      git_ignored = false,
     },
   },
 }
