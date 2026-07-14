@@ -1,0 +1,142 @@
+{
+    "profiles": [
+        {
+            "name": "Default profile",
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        },
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "escキーを押したときに、英数キーも送信する（vim用）",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "escape" },
+                                "to": [
+                                    { "key_code": "escape" },
+                                    { "key_code": "japanese_eisuu" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps Lockを、英数・かなのトグルに変更する",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "language": "ja" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "japanese_eisuu" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "language": "en" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "japanese_kana" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": { "is_keyboard": true },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "1" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        },
+                        {
+                            "from": { "key_code": "2" },
+                            "to": [{ "key_code": "1" }]
+                        },
+                        {
+                            "from": { "key_code": "3" },
+                            "to": [{ "key_code": "2" }]
+                        },
+                        {
+                            "from": { "key_code": "4" },
+                            "to": [{ "key_code": "3" }]
+                        },
+                        {
+                            "from": { "key_code": "5" },
+                            "to": [{ "key_code": "4" }]
+                        },
+                        {
+                            "from": { "key_code": "6" },
+                            "to": [{ "key_code": "5" }]
+                        },
+                        {
+                            "from": { "key_code": "7" },
+                            "to": [{ "key_code": "6" }]
+                        },
+                        {
+                            "from": { "key_code": "8" },
+                            "to": [{ "key_code": "7" }]
+                        },
+                        {
+                            "from": { "key_code": "9" },
+                            "to": [{ "key_code": "8" }]
+                        },
+                        {
+                            "from": { "key_code": "0" },
+                            "to": [{ "key_code": "9" }]
+                        },
+                        {
+                            "from": { "key_code": "hyphen" },
+                            "to": [{ "key_code": "0" }]
+                        },
+                        {
+                            "from": { "key_code": "international3" },
+                            "to": [{ "key_code": "equal_sign" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_eisuu" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_kana" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "caps_lock" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "equal_sign" },
+                            "to": [{ "key_code": "hyphen" }]
+                        }
+                    ]
+                }
+            ],
+            "name": "英字",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
