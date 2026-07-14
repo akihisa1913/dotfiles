@@ -1,2 +1,6 @@
 font-family = "Hack Nerd Font"
 theme = TokyoNight Storm
+cursor-color = "#A7C080"
+cursor-text = "#000000"
+backgrounnd-opacity=0.65
+background-blur = true
