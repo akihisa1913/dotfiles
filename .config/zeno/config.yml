@@ -25,6 +25,10 @@ snippets:
     keyword: view
     snippet: nvim -R
 
+  - name: cmuxmd
+    keyword: cmuxmd
+    snippet: cmux markdown open
+
   # tools
   - name: cat
     keyword: cat

@@ -21,6 +21,10 @@ return {
       json = { "prettierd" },
       markdown = { "prettierd" },
       lua = { "stylua" },
+      -- terraform_fmt は terraform CLI を呼ぶ
+      terraform = { "terraform_fmt" },
+      ["terraform-vars"] = { "terraform_fmt" },
+      hcl = { "terraform_fmt" },
     },
     format_on_save = {
       timeout_ms = 2000,
