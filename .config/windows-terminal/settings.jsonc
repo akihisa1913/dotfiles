@@ -1,0 +1,60 @@
+// Windows Terminal キーバインド設定(cmux 寄せ・Alt 版)
+// 対応: cmux の ⌘ → Alt、⌥⌘ → Ctrl+Alt。Ctrl+* はすべてシェル/TUI に素通りする。
+//
+// 配置先(Windows 側):
+//   %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+// この "actions" 配列を既存の settings.json にマージすること(丸ごと上書きしない)。
+//
+// 注意: Alt 版で犠牲になるのはシェルの Meta キー(readline/zsh の単語操作)。
+//   alt+f (forward-word) / alt+d (kill-word) / alt+p (history-search-backward) / alt+w (copy-region)
+// 使いたいものは { "command": "unbound", "keys": "alt+f" } で個別解除する。
+// WT デフォルトの alt+enter(全画面)が気になる場合も同様に unbound を追加。
+{
+  "actions": [
+    // --- ワークスペース(= WT タブ) ---
+    { "command": { "action": "newTab" }, "keys": "alt+n" },                 // cmux ⌘N
+    { "command": { "action": "closePane" }, "keys": "alt+w" },              // ⌘W
+    { "command": { "action": "closeTab" }, "keys": "alt+shift+w" },         // ⌘⇧W
+    { "command": { "action": "nextTab" }, "keys": "alt+shift+]" },          // ⌘⇧]
+    { "command": { "action": "prevTab" }, "keys": "alt+shift+[" },          // ⌘⇧[
+    { "command": { "action": "moveTab", "direction": "forward" }, "keys": "ctrl+alt+shift+]" },
+    { "command": { "action": "moveTab", "direction": "backward" }, "keys": "ctrl+alt+shift+[" },
+    { "command": { "action": "switchToTab", "index": 0 }, "keys": "alt+1" },
+    { "command": { "action": "switchToTab", "index": 1 }, "keys": "alt+2" },
+    { "command": { "action": "switchToTab", "index": 2 }, "keys": "alt+3" },
+    { "command": { "action": "switchToTab", "index": 3 }, "keys": "alt+4" },
+    { "command": { "action": "switchToTab", "index": 4 }, "keys": "alt+5" },
+    { "command": { "action": "switchToTab", "index": 5 }, "keys": "alt+6" },
+    { "command": { "action": "switchToTab", "index": 6 }, "keys": "alt+7" },
+    { "command": { "action": "switchToTab", "index": 7 }, "keys": "alt+8" },
+    { "command": { "action": "switchToTab", "index": 8 }, "keys": "alt+9" },
+    { "command": { "action": "tabSearch" }, "keys": "alt+p" },              // ⌘P
+    { "command": { "action": "commandPalette" }, "keys": "alt+shift+p" },   // ⌘⇧P
+    { "command": { "action": "renameTab" }, "keys": "alt+shift+r" },        // ⌘⇧R
+    { "command": { "action": "restoreLastClosed" }, "keys": "alt+shift+t" },// ⌘⇧T
+
+    // --- 分割ペイン ---
+    { "command": { "action": "splitPane", "split": "right", "splitMode": "duplicate" }, "keys": "alt+d" },       // ⌘D
+    { "command": { "action": "splitPane", "split": "down",  "splitMode": "duplicate" }, "keys": "alt+shift+d" }, // ⌘⇧D
+    { "command": { "action": "moveFocus", "direction": "left" },  "keys": "ctrl+alt+left" },   // ⌥⌘←
+    { "command": { "action": "moveFocus", "direction": "right" }, "keys": "ctrl+alt+right" },
+    { "command": { "action": "moveFocus", "direction": "up" },    "keys": "ctrl+alt+up" },
+    { "command": { "action": "moveFocus", "direction": "down" },  "keys": "ctrl+alt+down" },
+    { "command": { "action": "togglePaneZoom" }, "keys": "alt+shift+enter" }, // ⌘⇧↩
+    { "command": { "action": "resizePane", "direction": "left" },  "keys": "ctrl+alt+shift+left" },
+    { "command": { "action": "resizePane", "direction": "right" }, "keys": "ctrl+alt+shift+right" },
+    { "command": { "action": "resizePane", "direction": "up" },    "keys": "ctrl+alt+shift+up" },
+    { "command": { "action": "resizePane", "direction": "down" },  "keys": "ctrl+alt+shift+down" },
+
+    // --- 検索・表示・アプリ ---
+    { "command": { "action": "find" }, "keys": "alt+f" },                   // ⌘F
+    { "command": { "action": "markMode" }, "keys": "alt+shift+m" },         // ⌘⇧M コピーモード
+    { "command": { "action": "clearBuffer", "clear": "screen" }, "keys": "alt+shift+k" }, // ⌘⇧K
+    { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "alt+=" },
+    { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "alt+-" },
+    { "command": { "action": "resetFontSize" }, "keys": "alt+0" },
+    { "command": { "action": "newWindow" }, "keys": "alt+shift+n" },        // ⌘⇧N
+    { "command": { "action": "openSettings", "target": "settingsFile" }, "keys": "alt+," },
+    { "command": { "action": "toggleFullscreen" }, "keys": "alt+shift+f" }  // ⌃⌘F
+  ]
+}
